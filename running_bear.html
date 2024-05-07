@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的熊大</title>
+    <style>
+        body{
+            background-color:bisque;
+        }
+        #aa
+        {
+            position:absolute;
+            margin-top:300px;
+            width:200px;
+            height:100px;
+            background-image:url(./picture/奔跑小熊.png);
+            animation: move 1s steps(8) infinite,go 3s forwards; /*move動作， 維持1s， 分8步(8張圖)， 循環 ,forwards:保持最終狀態*/
+        }
+        @keyframes move
+        {
+            0%{
+                background-position:0, 0; /*控制背景圖的位置*/
+            }
+            100%{
+                background-position:-1600px, 0;
+            }
+        }
+
+        @keyframes go{
+            0%{
+                left:0;
+            }
+            100%{
+                left:45%;/*水平居中*/
+                trasform:translateX(-50%); /*？倒退自身的一半*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="aa"></div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        #main{
+            margin-top: 50px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .heart{
+            border-radius: 10px;
+            margin-right: 5px;
+            width: 10px;
+            height: 20px;
+            background-color: rgb(105,150,199);
+            animation:action 2s infinite alternate;/*反向循環*/
+        }
+        #main .heart:nth-child(2){
+            height: 40px;
+            background-color: rgb(58,123,4);
+        }
+        #main .heart:nth-child(3){
+            height: 70px;
+            background-color: rgb(15,354,10);
+        }
+        #main .heart:nth-child(4){
+            transform: translateY(15px);
+            height: 80px;
+            background-color: rgb(21,184,3);
+        }
+        #main .heart:nth-child(5){
+            transform: translateY(25px);
+            height: 90px;
+            background-color: rgb(58,243,4);
+        }
+        #main .heart:nth-child(6){
+            transform: translateY(15px);
+            height: 80px;
+            background-color: rgb(4,121,253);
+        }
+        #main .heart:nth-child(7){
+            height: 70px;
+            background-color: rgb(237,17,17);
+        }
+        #main .heart:nth-child(8){
+            height: 40px;
+            background-color: rgb(27,170,84);
+        }
+        #main .heart:nth-child(9){
+            height: 20px;
+            background-color: rgb(145,64,120);
+        }
+        @keyframes action{
+            from{
+                scale:0;/*不可見*/
+            }
+            t0{
+                scale:1;/*可見*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+</body>
+</html>

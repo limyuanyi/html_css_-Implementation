@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color: #333;
+            color:#fff;
+        }
+        nav{
+            width:350px;
+            height: 30px;
+            line-height:30px;/*文字在裏面 居中（=它的高度）*/
+            margin: 50px auto;
+            border-radius: 5px;
+            box-shadow:2px 5px 15px rgba(0,0,0, .7);
+        }
+        li:hover,h4:hover{
+            cursor:pointer;/*讓滑鼠箭頭變成手型*/
+            border-radius: 3px;
+        }
+        nav ul{
+            width:100%;
+            list-style:none;
+        }
+        .navli{
+            float:left;
+            width: 70px;
+            text-align:center;
+            font-size: 14px;
+        }
+        .ulson{
+            border-radius: 3px;
+            box-shadow:2px 5px 15px rgba(0,0,0, .7);
+            display:none;
+        }
+        .ulson li:not(:first-child){
+            border-top: 1px dashed #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="navli">
+                <h4>HTML5</h4>
+                <ul class="ulson">
+                    <li class="lison">HTML5</li>
+                    <li class="lison">HTML5</li>
+                    <li class="lison">HTML5</li>
+                    <li class="lison">HTML5</li>
+                    <li class="lison">HTML5</li>
+                </ul>
+            </li>
+            <li class="navli">
+                <h4>CSS3</h4>
+                <ul class="ulson">
+                    <li class="lison">CSS</li>
+                    <li class="lison">CSS</li>
+                    <li class="lison">CSS</li>
+                    <li class="lison">CSS</li>
+                    <li class="lison">CSS</li>
+                </ul>
+            </li>
+            <li class="navli">
+                <h4>J S</h4>
+                <ul class="ulson">
+                    <li class="lison">J S</li>
+                    <li class="lison">J S</li>
+                    <li class="lison">J S</li>
+                    <li class="lison">J S</li>
+                    <li class="lison">J S</li>
+                </ul>
+            </li>
+            <li class="navli">
+                <h4>JQUERY</h4>
+                <ul class="ulson">
+                    <li class="lison">JQUERY</li>
+                    <li class="lison">JQUERY</li>
+                    <li class="lison">JQUERY</li>
+                    <li class="lison">JQUERY</li>
+                    <li class="lison">JQUERY</li>
+                </ul>
+            </li>
+            <li class="navli">
+                <h4>VUE</h4>
+                <ul class="ulson">
+                    <li class="lison">VUE</li>
+                    <li class="lison">VUE</li>
+                    <li class="lison">VUE</li>
+                    <li class="lison">VUE</li>
+                    <li class="lison">VUE</li>
+                </ul>
+            </li>
+            
+        </ul>
+    </nav>
+
+    <script>
+        let aH=document.querySelectorAll("h4");
+        let aLi=document.querySelectorAll(".lison");
+        let anavLi=document.querySelectorAll(".navli");
+        let aUl=document.querySelectorAll(".ulson");
+        for(let i=0; i<anavLi.length;i++)
+        {
+            anavLi[i].onmouseover = ()=>{
+                aUl[i].style.display='block';
+            }
+            anavLi[i].onmouseout = ()=>{
+                aUl[i].style.display='none';
+            }
+
+        }
+        let changeColor=(arr)=>{
+            for(let i=0;i<arr.length;i++){
+                arr[i].onmouseover = function(){
+                    this.style.backgroundColor='red';
+                }
+                arr[i].onmouseout = function(){
+                    this.style.backgroundColor='';
+                }
+            }
+        }
+        changeColor(aH);
+        changeColor(aLi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100vw;
+            height:100vh;
+        }
+        div{
+            cursor:pointer;
+            height: 36px;
+            width: 36px;
+            background-color:red;
+            border:2px solid red;
+            border-radius: 5px;
+            position:absolute; /* 将定位方式设为绝对定位 */
+            box-shadow: 0 0 10px rgba(0,0,0, .7);;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        let oDiv = document.querySelector('div');
+        let flag=false;
+        oDiv.addEventListener('mousedown',(e)=>{
+            flag=true;
+            let x=e.offsetX;
+            let y=e.offsetY;
+            document.addEventListener('mousemove',(e)=>{
+                let _h=window.innerHeight - oDiv.offsetHeight;
+                let _w=window.innerWidth - oDiv.offsetWidth;
+                let div_left = e.clientX-x;
+                let div_top = e.clientY-y;
+                div_top = Math.min(Math.max(0,div_top),_h);
+                div_left = Math.min(Math.max(0,div_left),_w);
+                if(flag){
+                    oDiv.style.top = div_top + 'px';
+                    oDiv.style.left = div_left + 'px';
+                }
+            });
+        }); 
+
+        oDiv.addEventListener('mouseup', ()=> {
+            flag=false;
+        })
+    </script>
+</body>
+</html>

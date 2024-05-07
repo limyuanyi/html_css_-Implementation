@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片旋轉</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            display:flex;
+            justify-content:center;
+            perspective: 1500px;/*透視*/
+        }
+
+        #pic{
+            margin-top: 500px;
+            display: flex;
+            width: 350px;
+            height: 200px;
+            transform-style: preserve-3d/*三維空間*/;
+            animation:action 20s linear infinite;
+        }
+        @keyframes action{
+            from{
+                transform:rotateY(0deg) ;
+            }
+            to{
+                transform: rotateY(360deg);
+            }
+        }
+        #pic:hover{
+            cursor:pointer;
+            animation-play-state: paused;
+        }
+        #pic img{
+            position:absolute;
+            width: 350px;
+            height: 200px;
+            -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 10%,rgba(255,255,255,0.3));/*漸變色*/
+        }
+
+        #pic img:nth-child(1){
+            transform: translateZ(500px);
+        }
+        #pic img:nth-child(2){
+            transform:rotateY(60deg) translateZ(500px);
+        }
+        #pic img:nth-child(3){
+            transform:rotateY(120deg) translateZ(500px);
+        }
+        #pic img:nth-child(4){
+            transform:rotateY(180deg) translateZ(500px);
+        }
+        #pic img:nth-child(5){
+            transform:rotateY(240deg) translateZ(500px);
+        }
+        #pic img:nth-child(6){
+            transform:rotateY(300deg) translateZ(500px);
+        }
+    </style>
+</head>
+<body>
+    <div id="pic">
+        <img src="./picture/LINE_ALBUM_112年 國際文化之夜_240308_20.jpg" alt="">
+        <img src="./picture/LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_15.jpg" alt="">
+        <img src="./picture/LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_19.jpg" alt="">
+        <img src="./picture/LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_25.jpg" alt="">
+        <img src="./picture/LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_43.jpg" alt="">
+        <img src="./picture/LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_46.jpg" alt="">
+    </div>
+</body>
+</html>

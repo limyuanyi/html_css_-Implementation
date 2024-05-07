@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height:100vh;/*伺服高度*/
+            display:flex;
+            justify-content:center;/*水平置中*/
+            align-items:center;/*垂直*/
+        }
+        #con{
+            position:relative;
+            width:2100px;
+            height:400px;
+            overflow:hidden;/*溢出隱藏*/
+        }
+        ul{
+            position:absolute;
+            left:0px;
+            width:2100px;
+            height:400px;
+        }
+        li{
+            width:400px;
+            list-style:none;/*清楚ul list的點記號*/
+            float:left; /* 橫著排列*/
+            padding-right:20px;/*間距*/
+        }
+        img{
+            width:400px;
+            height:261px;
+        }
+        #bu{
+            width:400px;
+            position:absolute;
+            bottom:20px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .bu{
+            height:35px;
+            width:80px;
+            margin:0 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="con">
+        <ul>
+            <li><img src="C:\Users\ASUS\Desktop\html_css\html_css實例\picture\LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_15.jpg" alt=""></li>
+            <li><img src="C:\Users\ASUS\Desktop\html_css\html_css實例\picture\LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_19.jpg" alt=""></li>
+            <li><img src="C:\Users\ASUS\Desktop\html_css\html_css實例\picture\LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_25.jpg" alt=""></li>
+            <li><img src="C:\Users\ASUS\Desktop\html_css\html_css實例\picture\LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_43.jpg" alt=""></li>
+            <li><img src="C:\Users\ASUS\Desktop\html_css\html_css實例\picture\LINE_ALBUM_巴拉拉小魔仙🏰✨❤️_230919_46.jpg" alt=""></li>
+        </ul>
+
+        <div id="bu">
+            <button class="bu"><-向左走</button>
+            <button class="bu">向右走-></button>
+        </div>
+    </div>
+
+    <script>
+        let oul = document.querySelector('ul');
+        oul.innerHTML += oul.innerHTML;
+        let aLi = document.querySelectorAll('li');
+        let aBu = document.querySelectorAll('.bu');
+        oul.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+        //alert(oul.style.width);
+        let speed = -2;
+        let move = ()=> {
+            if(oul.offsetLeft < - oul.offsetWidth/2){
+                oul.style.left = '0';
+            }
+            if(oul.offsetLeft > 0){
+                oul.style.left = - oul.offsetWidth/2 + 'px';
+            }
+            oul.style.left=oul.offsetLeft + speed + 'px';
+            //alert(oul.offsetleft);
+        }
+        let timer=setInterval(move,30);
+
+        oul.addEventListener('mouseover',function(){
+            clearInterval(timer);
+        })
+        oul.addEventListener('mouseout',function(){
+            timer=setInterval(move,30);
+        })
+        aBu[0].onclick = function(){
+            speed=-2;
+        }
+        aBu[1].onclick = function(){
+            speed=2;
+        }
+    </script>
+</body>
+</html>

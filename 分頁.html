@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分頁</title>
+    <style>
+        #fenye{
+            margin-top:300px;
+            text-align:center;
+        }
+        a{
+            width:36px;
+            height:36px;
+            border:1px solid #ccc;
+            display:inline-block;/*行内元素*/
+            text-decoration:none; /*取消a下劃綫 */
+            font-size:14px;
+            color:black;
+            line-height:36px;/* 讓方塊字體垂直居中，設置和a高度一樣*/
+        }
+        .aa{
+            width:80px;
+        }
+        #ip{
+            width:40px;
+            height:36px;
+            border:1px solid #ccc;
+            outline:none;/*避免黨指到textbox時，textbox邊框變粗 */
+        }
+        #bd{
+            width:50px;
+            height:36px;
+            border:1px solid #ccc;
+            border-radius: 5px;/*圓角*/
+        }
+        .now{
+            background-color:#ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="fenye">
+        <a href="" class="aa">&lt;&lt;上一頁</a>
+        <a href="">1</a>
+        <a href="" class="now">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">6</a>
+        <a href="">...</a>
+        <a href="" class="aa">下一頁&gt;&gt;</a>
+        到第
+        <input type="text" id="ip">
+        頁
+        <button id="bd">確認</button>
+    </div>
+</body>
+</html>
